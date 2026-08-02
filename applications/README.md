@@ -23,4 +23,4 @@ What it demonstrates:
 
 Roughly 450 lines of code and 165 lines of comments.
 
-**Demo place:** _(paste the Roblox place link here before submitting)_
+**Demo place:**[ _(Demo Place)_](https://create.roblox.com/dashboard/creations/experiences/10619251603/configure)
