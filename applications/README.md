@@ -23,4 +23,4 @@ What it demonstrates:
 
 Roughly 450 lines of code and 165 lines of comments.
 
-**Demo place:**[ _(Demo Place)_](https://create.roblox.com/dashboard/creations/experiences/10619251603/configure)
+**Demo place:**[ _(Demo Place)_]([https://create.roblox.com/dashboard/creations/experiences/10619251603/configure](https://www.roblox.com/games/132371824335861/Preview))
