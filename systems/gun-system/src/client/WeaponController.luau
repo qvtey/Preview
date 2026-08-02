@@ -129,10 +129,7 @@ local function tryFire()
 
 	TracerEmitter.tracer(origin, tracerEnd(origin, predicted, active.range))
 
-	spring:impulse(Vector2.new(
-		(random:NextNumber() * 2 - 1) * active.recoil.horizontal,
-		active.recoil.vertical
-	))
+	spring:impulse(Vector2.new((random:NextNumber() * 2 - 1) * active.recoil.horizontal, active.recoil.vertical))
 
 	fireRemote:FireServer({
 		weaponId = active.id,

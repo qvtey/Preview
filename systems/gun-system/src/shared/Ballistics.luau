@@ -49,11 +49,8 @@ function Ballistics.coneDirection(direction: Vector3, angleDegrees: number, rand
 	local azimuth = random:NextNumber() * math.pi * 2
 	local polar = math.acos(1 - random:NextNumber() * (1 - math.cos(limit)))
 
-	local offset = Vector3.new(
-		math.sin(polar) * math.cos(azimuth),
-		math.sin(polar) * math.sin(azimuth),
-		-math.cos(polar)
-	)
+	local offset =
+		Vector3.new(math.sin(polar) * math.cos(azimuth), math.sin(polar) * math.sin(azimuth), -math.cos(polar))
 
 	return CFrame.lookAlong(Vector3.zero, forward):VectorToWorldSpace(offset).Unit
 end

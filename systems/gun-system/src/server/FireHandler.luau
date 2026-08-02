@@ -21,19 +21,21 @@ local shotRemote = Remotes.event(Remotes.SHOT)
 local ammoRemote = Remotes.event(Remotes.AMMO)
 local tracerRemote = Remotes.unreliable(Remotes.TRACER)
 
-local generators: { [Player]: Random } = {}
+local generators: { [Player]: Random? } = {}
 
 local FireHandler = {}
 
 local function generatorFor(player: Player): Random
 	local generator = generators[player]
 
-	if generator == nil then
-		generator = Random.new()
-		generators[player] = generator
+	if generator then
+		return generator
 	end
 
-	return generator
+	local created = Random.new()
+	generators[player] = created
+
+	return created
 end
 
 local function isSane(vector: Vector3): boolean

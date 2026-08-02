@@ -83,16 +83,18 @@ local function resolveBackend(): Types.Backend
 		return current
 	end
 
+	local created: Types.Backend
+
 	if Config.forceMemoryBackend or (RunService:IsStudio() and not apiAccessEnabled()) then
 		warn("[DataService] using the in memory backend, nothing written here survives the session")
-		current = MemoryBackend.new()
+		created = MemoryBackend.new()
 	else
-		current = liveBackend()
+		created = liveBackend()
 	end
 
-	backend = current
+	backend = created
 
-	return current
+	return created
 end
 
 local function waitForBudget()
@@ -125,17 +127,17 @@ function Store.acquire(key: string): (boolean, Record?, string?, boolean)
 		local captured: Record? = nil
 
 		resolveBackend().update(key, function(stored: Record?): Record?
-			local record = if stored then normalise(stored) else blankRecord()
+			local current = if stored then normalise(stored) else blankRecord()
 
-			if SessionLock.blocks(record.lock, JOB_ID, os.time(), Config.lockTimeout) then
+			if SessionLock.blocks(current.lock, JOB_ID, os.time(), Config.lockTimeout) then
 				blocked = true
 				return nil
 			end
 
-			record.lock = SessionLock.stamp(JOB_ID)
-			captured = record
+			current.lock = SessionLock.stamp(JOB_ID)
+			captured = current
 
-			return record
+			return current
 		end)
 
 		lastAttemptBlocked = blocked

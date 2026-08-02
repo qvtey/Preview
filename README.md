@@ -41,6 +41,22 @@ rokit install
 
 `player-data` runs in Studio without API access enabled. It detects that and swaps to an in memory backend that implements the same interface, so a playtest exercises the same load, save and shutdown paths.
 
+## Checks
+
+Formatting and lint run over the whole repo:
+
+```bash
+stylua --check systems && selene systems
+```
+
+Strict mode type analysis runs per system, because each one has its own instance tree:
+
+```bash
+rojo sourcemap default.project.json -o sourcemap.json && luau-lsp analyze --defs=globalTypes.d.luau --sourcemap=sourcemap.json --base-luaurc=../../.luaurc src
+```
+
+`globalTypes.d.luau` is the Roblox API definition file from the luau-lsp repository. All three systems are clean under all three tools, which is the bar I hold client work to as well.
+
 ## What is next in here
 
 I add a system when I have written something worth showing rather than on a schedule. Likely candidates are a replication layer for player state, a round based match loop, and a shop with receipt handling.

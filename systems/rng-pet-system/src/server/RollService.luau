@@ -18,7 +18,7 @@ local ROLLS_PER_SECOND = 3
 local LUCK_PRECISION = 100
 
 local pools: { [number]: Pool } = {}
-local generators: { [Player]: Random } = {}
+local generators: { [Player]: Random? } = {}
 local rollCounts: { [Player]: number } = {}
 local luckValues: { [Player]: number } = {}
 

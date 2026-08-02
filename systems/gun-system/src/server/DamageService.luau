@@ -14,7 +14,9 @@ local function sameTeam(source: Player, target: Player): boolean
 		return false
 	end
 
-	return source.Team ~= nil and source.Team == target.Team
+	local team = source.Team :: Team?
+
+	return team ~= nil and team == target.Team
 end
 
 function DamageService.canDamage(source: Player, target: Player): boolean
