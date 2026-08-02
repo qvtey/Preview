@@ -1,0 +1,15 @@
+{
+  "name": "player-data",
+  "tree": {
+    "$className": "DataModel",
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "DataService": {
+        "$path": "src/server/DataService"
+      },
+      "DataBootstrap": {
+        "$path": "src/server/DataBootstrap.server.luau"
+      }
+    }
+  }
+}

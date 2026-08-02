@@ -1,0 +1,10 @@
+{
+  "languageMode": "strict",
+  "lint": {
+    "*": true,
+    "LocalUnused": true,
+    "ImportUnused": true,
+    "TableOperations": true
+  },
+  "lintErrors": false
+}

@@ -1,0 +1,12 @@
+*.rbxl
+*.rbxlx
+*.rbxl.lock
+*.rbxlx.lock
+
+build/
+out/
+
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
