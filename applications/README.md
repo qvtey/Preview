@@ -23,4 +23,4 @@ What it demonstrates:
 
 Roughly 450 lines of code and 165 lines of comments.
 
-Demo place: https://www.roblox.com/games/132371824335861/Preview
+Demo place https://www.roblox.com/games/132371824335861/Preview
